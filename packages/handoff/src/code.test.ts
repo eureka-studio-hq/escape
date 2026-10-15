@@ -90,3 +90,25 @@ describe('code mode', () => {
     expect(r?.payload.snapshot).toEqual({ 'game.coins': '5' });
   });
 });
+
+describe('code() without storage', () => {
+  it('keeps one code for the page', () => {
+    const h = createHandoff({ keys: 'game.', transport: memoryTransport(), codeKey: 'x.code' });
+    const ls = window.localStorage;
+    const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('blocked');
+    });
+    const getItem = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('blocked');
+    });
+    try {
+      const a = h.code();
+      expect(h.code()).toBe(a);
+      expect(h.params()).toEqual({ go: a });
+    } finally {
+      setItem.mockRestore();
+      getItem.mockRestore();
+      ls.clear();
+    }
+  });
+});

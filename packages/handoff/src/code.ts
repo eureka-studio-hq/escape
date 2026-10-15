@@ -71,17 +71,25 @@ export function createHandoff(options: HandoffOptions) {
   const param = options.param ?? 'go';
   const codeKey = options.codeKey ?? 'escape.handoff.code';
 
+  let memo: string | null = null;
   function code(): string {
+    if (memo) return memo;
     const ls = storage();
-    let c = ls?.getItem(codeKey) ?? null;
+    let c: string | null = null;
+    try {
+      c = ls?.getItem(codeKey) ?? null;
+    } catch {
+      // blocked storage
+    }
     if (!c || !CODE_RE.test(c)) {
       c = generateCode();
       try {
         ls?.setItem(codeKey, c);
       } catch {
-        // ignore
+        // no storage: the code still holds for this page
       }
     }
+    memo = c;
     return c;
   }
 
