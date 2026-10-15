@@ -1,25 +1,105 @@
 {
   "description": "Real user-agent strings and the result detect() must return for each. Add a row when you find a misdetection; the fix usually lives in apps.json.",
   "fixtures": [
-    { "note": "iOS Safari 17", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1", "expect": { "inApp": false, "app": null, "os": "ios" } },
-    { "note": "iOS Chrome", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/125.0.6422.80 Mobile/15E148 Safari/604.1", "expect": { "inApp": false, "app": null, "os": "ios" } },
-    { "note": "iOS Firefox", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/126.0 Mobile/15E148 Safari/605.1.15", "expect": { "inApp": false, "app": null, "os": "ios" } },
-    { "note": "Android Chrome", "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36", "expect": { "inApp": false, "app": null, "os": "android" } },
-    { "note": "Android Samsung Internet", "ua": "Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-A135F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/24.0 Chrome/117.0.0.0 Mobile Safari/537.36", "expect": { "inApp": false, "app": null, "os": "android" } },
-    { "note": "Desktop Chrome", "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36", "expect": { "inApp": false, "app": null, "os": "other" } },
-    { "note": "macOS Safari", "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15", "expect": { "inApp": false, "app": null, "os": "other" } },
-    { "note": "X on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Twitter for iPhone/10.45", "expect": { "inApp": true, "app": "x", "os": "ios", "confidence": "high" } },
-    { "note": "X on Android", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 TwitterAndroid", "expect": { "inApp": true, "app": "x", "os": "android", "confidence": "high" } },
-    { "note": "Instagram on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 300.0.0.0 (iPhone14,5; iOS 17_0; en_US; en; scale=3.00; 1170x2532; 123456789)", "expect": { "inApp": true, "app": "instagram", "os": "ios", "confidence": "high" } },
-    { "note": "Instagram on Android", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 Instagram 330.0.0.0 Android (33/13; 420dpi; 1080x2220; samsung; SM-A135F; a13; mt6768; en_US; 123456789)", "expect": { "inApp": true, "app": "instagram", "os": "android", "confidence": "high" } },
-    { "note": "Facebook on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBAV/460.0.0.0;FBBV/1234;FBDV/iPhone14,5;FBMD/iPhone;FBSN/iOS;FBSV/17.4;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5]", "expect": { "inApp": true, "app": "facebook", "os": "ios", "confidence": "high" } },
-    { "note": "Facebook on Android", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/460.0.0.0;]", "expect": { "inApp": true, "app": "facebook", "os": "android", "confidence": "high" } },
-    { "note": "Snapchat on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Snapchat/12.80.0.30 (iPhone14,5; iOS 17.4; gzip)", "expect": { "inApp": true, "app": "snapchat", "os": "ios", "confidence": "high" } },
-    { "note": "TikTok on Android", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 trill_2022803040 JsSdk/1.0 NetType/WIFI Channel/googleplay AppName/musical_ly app_version/28.3.4 ByteLocale/en ByteFullLocale/en Region/NG BytedanceWebview/d8a21c6", "expect": { "inApp": true, "app": "tiktok", "os": "android", "confidence": "high" } },
-    { "note": "WhatsApp on iPhone (link preview browser)", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 WhatsApp/24.6.77", "expect": { "inApp": true, "app": "whatsapp", "os": "ios", "confidence": "high" } },
-    { "note": "LinkedIn on Android", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 LinkedInApp", "expect": { "inApp": true, "app": "linkedin", "os": "android", "confidence": "high" } },
-    { "note": "Google app on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 GSA/320.0.600293804", "expect": { "inApp": true, "app": "gmail", "os": "ios", "confidence": "high" } },
-    { "note": "Bare WKWebView on iPhone", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148", "expect": { "inApp": true, "app": "other", "os": "ios", "confidence": "medium" } },
-    { "note": "Android System WebView", "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36", "expect": { "inApp": true, "app": "other", "os": "android", "confidence": "medium" } }
+    {
+      "note": "iOS Safari 17",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
+      "expect": { "inApp": false, "app": null, "os": "ios" }
+    },
+    {
+      "note": "iOS Chrome",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/125.0.6422.80 Mobile/15E148 Safari/604.1",
+      "expect": { "inApp": false, "app": null, "os": "ios" }
+    },
+    {
+      "note": "iOS Firefox",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/126.0 Mobile/15E148 Safari/605.1.15",
+      "expect": { "inApp": false, "app": null, "os": "ios" }
+    },
+    {
+      "note": "Android Chrome",
+      "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36",
+      "expect": { "inApp": false, "app": null, "os": "android" }
+    },
+    {
+      "note": "Android Samsung Internet",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SAMSUNG SM-A135F) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/24.0 Chrome/117.0.0.0 Mobile Safari/537.36",
+      "expect": { "inApp": false, "app": null, "os": "android" }
+    },
+    {
+      "note": "Desktop Chrome",
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "expect": { "inApp": false, "app": null, "os": "other" }
+    },
+    {
+      "note": "macOS Safari",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15",
+      "expect": { "inApp": false, "app": null, "os": "other" }
+    },
+    {
+      "note": "X on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Twitter for iPhone/10.45",
+      "expect": { "inApp": true, "app": "x", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "X on Android",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 TwitterAndroid",
+      "expect": { "inApp": true, "app": "x", "os": "android", "confidence": "high" }
+    },
+    {
+      "note": "Instagram on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 300.0.0.0 (iPhone14,5; iOS 17_0; en_US; en; scale=3.00; 1170x2532; 123456789)",
+      "expect": { "inApp": true, "app": "instagram", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "Instagram on Android",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 Instagram 330.0.0.0 Android (33/13; 420dpi; 1080x2220; samsung; SM-A135F; a13; mt6768; en_US; 123456789)",
+      "expect": { "inApp": true, "app": "instagram", "os": "android", "confidence": "high" }
+    },
+    {
+      "note": "Facebook on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBAV/460.0.0.0;FBBV/1234;FBDV/iPhone14,5;FBMD/iPhone;FBSN/iOS;FBSV/17.4;FBSS/3;FBID/phone;FBLC/en_US;FBOP/5]",
+      "expect": { "inApp": true, "app": "facebook", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "Facebook on Android",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/460.0.0.0;]",
+      "expect": { "inApp": true, "app": "facebook", "os": "android", "confidence": "high" }
+    },
+    {
+      "note": "Snapchat on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Snapchat/12.80.0.30 (iPhone14,5; iOS 17.4; gzip)",
+      "expect": { "inApp": true, "app": "snapchat", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "TikTok on Android",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 trill_2022803040 JsSdk/1.0 NetType/WIFI Channel/googleplay AppName/musical_ly app_version/28.3.4 ByteLocale/en ByteFullLocale/en Region/NG BytedanceWebview/d8a21c6",
+      "expect": { "inApp": true, "app": "tiktok", "os": "android", "confidence": "high" }
+    },
+    {
+      "note": "WhatsApp on iPhone (link preview browser)",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 WhatsApp/24.6.77",
+      "expect": { "inApp": true, "app": "whatsapp", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "LinkedIn on Android",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36 LinkedInApp",
+      "expect": { "inApp": true, "app": "linkedin", "os": "android", "confidence": "high" }
+    },
+    {
+      "note": "Google app on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 GSA/320.0.600293804",
+      "expect": { "inApp": true, "app": "gmail", "os": "ios", "confidence": "high" }
+    },
+    {
+      "note": "Bare WKWebView on iPhone",
+      "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+      "expect": { "inApp": true, "app": "other", "os": "ios", "confidence": "medium" }
+    },
+    {
+      "note": "Android System WebView",
+      "ua": "Mozilla/5.0 (Linux; Android 13; SM-A135F Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.0.0 Mobile Safari/537.36",
+      "expect": { "inApp": true, "app": "other", "os": "android", "confidence": "medium" }
+    }
   ]
 }

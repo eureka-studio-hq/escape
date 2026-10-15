@@ -27,7 +27,9 @@ export function matchApp(ua: string = userAgent()): AppRow | null {
 export function looksLikeWebView(ua: string = userAgent(), os: OS = detectOS(ua)): boolean {
   if (os === 'ios') {
     // Safari and the iOS browsers that reuse WebKit all carry "Safari/"; bare WKWebView does not.
-    return /AppleWebKit/i.test(ua) && !/Safari\//i.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua);
+    return (
+      /AppleWebKit/i.test(ua) && !/Safari\//i.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua)
+    );
   }
   if (os === 'android') {
     // Android System WebView adds "; wv)" and keeps the legacy "Version/x.x" token.

@@ -32,7 +32,8 @@ export function capabilities(ua?: string): Capabilities {
   if (hasDocument()) {
     const d = document as Document & { webkitFullscreenEnabled?: boolean };
     if (typeof d.fullscreenEnabled === 'boolean') fullscreen = fullscreen && d.fullscreenEnabled;
-    else if (typeof d.webkitFullscreenEnabled === 'boolean') fullscreen = fullscreen && d.webkitFullscreenEnabled;
+    else if (typeof d.webkitFullscreenEnabled === 'boolean')
+      fullscreen = fullscreen && d.webkitFullscreenEnabled;
   }
 
   let orientationLock = base.orientationLock;

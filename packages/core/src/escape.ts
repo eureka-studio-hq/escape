@@ -53,7 +53,11 @@ export function escapeTarget(options: EscapeOptions = {}, ua?: string): EscapeTa
     const u = new URL(url);
     const pkg = options.androidPackage ?? 'com.android.chrome';
     const hostPath = `${u.host}${u.pathname}${u.search}`;
-    return { url, href: `intent://${hostPath}#Intent;scheme=https;package=${pkg};end`, scheme: 'intent' };
+    return {
+      url,
+      href: `intent://${hostPath}#Intent;scheme=https;package=${pkg};end`,
+      scheme: 'intent',
+    };
   }
   if (env.os === 'ios') {
     return { url, href: `x-safari-${url}`, scheme: 'x-safari' };
@@ -72,7 +76,12 @@ export function escapeTarget(options: EscapeOptions = {}, ua?: string): EscapeTa
 export function escape(options: EscapeOptions = {}): EscapeTarget {
   const env = detect();
   const target = escapeTarget(options);
-  emit('inapp_escape', { medium: options.medium ?? null, app: env.app, os: env.os, scheme: target.scheme });
+  emit('inapp_escape', {
+    medium: options.medium ?? null,
+    app: env.app,
+    os: env.os,
+    scheme: target.scheme,
+  });
 
   if (!hasWindow()) return target;
 
@@ -102,7 +111,12 @@ export function escape(options: EscapeOptions = {}): EscapeTarget {
   setTimeout(() => {
     if (hasDocument() && document.hidden) return;
     void copy.then(() => {
-      emit('inapp_escape_stayed', { medium: options.medium ?? null, app: env.app, os: env.os, copied });
+      emit('inapp_escape_stayed', {
+        medium: options.medium ?? null,
+        app: env.app,
+        os: env.os,
+        copied,
+      });
       options.onStay?.({ copied, url: target.url });
     });
   }, stayAfter);

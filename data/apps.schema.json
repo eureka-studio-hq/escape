@@ -6,14 +6,31 @@
   "$defs": {
     "caps": {
       "type": "object",
-      "required": ["googleSignIn", "webgl", "audioAutoplay", "fullscreen", "orientationLock", "storage", "pwaInstall"],
+      "required": [
+        "googleSignIn",
+        "webgl",
+        "audioAutoplay",
+        "fullscreen",
+        "orientationLock",
+        "storage",
+        "pwaInstall"
+      ],
       "properties": {
-        "googleSignIn": { "type": "boolean", "description": "Whether Google OAuth completes inside this browser" },
-        "webgl": { "enum": ["ok", "fragile"], "description": "fragile = context loss likely under memory pressure" },
+        "googleSignIn": {
+          "type": "boolean",
+          "description": "Whether Google OAuth completes inside this browser"
+        },
+        "webgl": {
+          "enum": ["ok", "fragile"],
+          "description": "fragile = context loss likely under memory pressure"
+        },
         "audioAutoplay": { "type": "boolean" },
         "fullscreen": { "type": "boolean" },
         "orientationLock": { "type": "boolean" },
-        "storage": { "enum": ["shared", "isolated"], "description": "isolated = this app's storage is not the system browser's" },
+        "storage": {
+          "enum": ["shared", "isolated"],
+          "description": "isolated = this app's storage is not the system browser's"
+        },
         "pwaInstall": { "type": "boolean" }
       },
       "additionalProperties": false
@@ -46,7 +63,11 @@
     "browser": {
       "type": "object",
       "required": ["ios", "android", "other"],
-      "properties": { "ios": { "$ref": "#/$defs/caps" }, "android": { "$ref": "#/$defs/caps" }, "other": { "$ref": "#/$defs/caps" } },
+      "properties": {
+        "ios": { "$ref": "#/$defs/caps" },
+        "android": { "$ref": "#/$defs/caps" },
+        "other": { "$ref": "#/$defs/caps" }
+      },
       "additionalProperties": false
     }
   },

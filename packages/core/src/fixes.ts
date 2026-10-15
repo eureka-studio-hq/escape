@@ -80,14 +80,15 @@ export type ShareResult = { method: 'web-share' | 'x' | 'whatsapp' | 'copied' | 
  * inside X open the tweet composer, inside WhatsApp open a chat, otherwise copy the link.
  */
 export async function share(options: ShareOptions): Promise<ShareResult> {
-  const url = options.medium
-    ? withUtm(options.url, 'share', options.medium)
-    : options.url;
+  const url = options.medium ? withUtm(options.url, 'share', options.medium) : options.url;
   const text = options.text ?? options.title ?? '';
 
   if (hasNavigator() && typeof navigator.share === 'function') {
     try {
-      await navigator.share({ title: options.title, text: options.text, url });
+      const data: ShareData = { url };
+      if (options.title) data.title = options.title;
+      if (options.text) data.text = options.text;
+      await navigator.share(data);
       return { method: 'web-share' };
     } catch {
       // user cancelled or the app refused; try the fallbacks
@@ -97,7 +98,11 @@ export async function share(options: ShareOptions): Promise<ShareResult> {
 
   const env = detect();
   if (env.app === 'x') {
-    window.open(`https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank', 'noopener');
+    window.open(
+      `https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+      '_blank',
+      'noopener',
+    );
     return { method: 'x' };
   }
   if (env.app === 'whatsapp') {

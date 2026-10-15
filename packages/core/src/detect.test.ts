@@ -33,18 +33,45 @@ describe('looksLikeWebView', () => {
 
 describe('detect', () => {
   it('reports system browsers as not in-app', () => {
-    expect(detect({ ua: IOS_SAFARI })).toMatchObject({ inApp: false, app: null, os: 'ios', outsideBrowser: 'Safari' });
-    expect(detect({ ua: ANDROID_CHROME })).toMatchObject({ inApp: false, app: null, os: 'android', outsideBrowser: 'Chrome' });
+    expect(detect({ ua: IOS_SAFARI })).toMatchObject({
+      inApp: false,
+      app: null,
+      os: 'ios',
+      outsideBrowser: 'Safari',
+    });
+    expect(detect({ ua: ANDROID_CHROME })).toMatchObject({
+      inApp: false,
+      app: null,
+      os: 'android',
+      outsideBrowser: 'Chrome',
+    });
   });
 
   it('names known apps with high confidence', () => {
-    expect(detect({ ua: IOS_X })).toMatchObject({ inApp: true, app: 'x', os: 'ios', confidence: 'high' });
-    expect(detect({ ua: IOS_IG })).toMatchObject({ inApp: true, app: 'instagram', confidence: 'high' });
+    expect(detect({ ua: IOS_X })).toMatchObject({
+      inApp: true,
+      app: 'x',
+      os: 'ios',
+      confidence: 'high',
+    });
+    expect(detect({ ua: IOS_IG })).toMatchObject({
+      inApp: true,
+      app: 'instagram',
+      confidence: 'high',
+    });
   });
 
   it('falls back to heuristics for unlabeled WebViews', () => {
-    expect(detect({ ua: ANDROID_WV })).toMatchObject({ inApp: true, app: 'other', confidence: 'medium' });
-    expect(detect({ ua: IOS_WKWEBVIEW })).toMatchObject({ inApp: true, app: 'other', confidence: 'medium' });
+    expect(detect({ ua: ANDROID_WV })).toMatchObject({
+      inApp: true,
+      app: 'other',
+      confidence: 'medium',
+    });
+    expect(detect({ ua: IOS_WKWEBVIEW })).toMatchObject({
+      inApp: true,
+      app: 'other',
+      confidence: 'medium',
+    });
   });
 
   it('is safe without a user agent', () => {
