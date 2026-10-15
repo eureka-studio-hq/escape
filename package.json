@@ -12,7 +12,7 @@
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
     "typecheck": "pnpm -r --filter './packages/*' typecheck",
-    "size": "pnpm --filter @eureka/escape build && pnpm --filter @eureka/escape size",
+    "size": "pnpm --filter @eureka/escape size",
     "changeset": "changeset",
     "release": "pnpm build && changeset publish"
   },

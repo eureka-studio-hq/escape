@@ -45,6 +45,8 @@ importers:
         specifier: ^2.1.9
         version: 2.1.9(jsdom@25.0.1)
 
+  packages/core: {}
+
 packages:
 
   '@asamuzakjp/css-color@3.2.0':
