@@ -1,0 +1,54 @@
+{
+  "name": "@eureka-studio/escape-server",
+  "version": "0.0.0",
+  "description": "Ready-made server handlers for @eureka-studio/escape-handoff: Cloudflare Workers (KV) and Vercel / Node (Upstash Redis), plus a framework-free core you can adapt.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eureka-studio-hq/escape.git",
+    "directory": "packages/server"
+  },
+  "homepage": "https://github.com/eureka-studio-hq/escape#readme",
+  "bugs": "https://github.com/eureka-studio-hq/escape/issues",
+  "keywords": [
+    "handoff",
+    "cloudflare workers",
+    "vercel",
+    "upstash",
+    "web game"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./cloudflare": {
+      "types": "./dist/cloudflare.d.ts",
+      "import": "./dist/cloudflare.js",
+      "require": "./dist/cloudflare.cjs"
+    },
+    "./upstash": {
+      "types": "./dist/upstash.d.ts",
+      "import": "./dist/upstash.js",
+      "require": "./dist/upstash.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
