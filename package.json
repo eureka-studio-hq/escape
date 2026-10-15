@@ -1,0 +1,18 @@
+{
+  "name": "escape-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "pnpm -r --filter './packages/*' build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "pnpm -r --filter './packages/*' typecheck",
+    "size": "pnpm --filter @eureka/escape size",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {}
+}
