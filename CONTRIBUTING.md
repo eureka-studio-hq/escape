@@ -34,3 +34,18 @@ CI runs lint, typecheck, tests, build and the size check. A PR that only touches
 ## Code of conduct
 
 See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+
+## Releasing (maintainers)
+
+```sh
+pnpm changeset                 # describe the change, pick the bump
+pnpm changeset version         # bumps versions and changelogs
+git add -A && git commit -m "chore: release <packages and versions>"
+pnpm build
+(cd packages/core    && pnpm publish --access public --no-git-checks)
+(cd packages/handoff && pnpm publish --access public --no-git-checks)
+(cd packages/server  && pnpm publish --access public --no-git-checks)
+pnpm changeset tag && git push && git push --tags
+```
+
+Always `pnpm publish`, never `npm publish`: pnpm rewrites `workspace:` dependency ranges to real versions at publish time; npm ships them as-is and the package becomes uninstallable. Publish the core before anything that depends on it.
