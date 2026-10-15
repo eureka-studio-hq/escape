@@ -1,4 +1,4 @@
-# @eureka/escape
+# @eureka-studio/escape
 
 ## 0.1.0
 

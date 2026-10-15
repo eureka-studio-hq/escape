@@ -1,11 +1,11 @@
-# @eureka/escape
+# @eureka-studio/escape
 
 Detect in-app browsers (X, Instagram, TikTok, Facebook, Snapchat, WhatsApp and more), fix what can be fixed, and give people a one-tap way out to Safari or Chrome.
 
 When a link is opened from a social app it loads inside that app's embedded browser. There, Google sign-in is refused, WebGL contexts get dropped under memory pressure, storage is isolated from the real browser, audio stays muted, and the page cannot lock orientation. This package handles all of that in under 3 kB with no dependencies, and works with any framework or none.
 
 ```ts
-import { detect, escape, guardWebGL } from '@eureka/escape';
+import { detect, escape, guardWebGL } from '@eureka-studio/escape';
 
 if (detect().inApp) {
   showButton('Open in Safari', () => escape({ medium: 'start' }));
@@ -18,13 +18,13 @@ Works with plain HTML, Vite, React, Vue, Svelte, Phaser, PixiJS, Three.js and an
 ## Install
 
 ```sh
-npm install @eureka/escape
+npm install @eureka-studio/escape
 ```
 
 Or without a build step:
 
 ```html
-<script src="https://unpkg.com/@eureka/escape/dist/escape.global.js"></script>
+<script src="https://unpkg.com/@eureka-studio/escape/dist/escape.global.js"></script>
 <script>
   if (Escape.detect().inApp) {
     /* ... */
@@ -104,7 +104,7 @@ onEvent((name, data) => analytics.track(name, data));
 
 ## Carrying progress across the jump
 
-The in-app browser's storage is not Safari's or Chrome's. A `@eureka/escape-handoff` package with a link mode (no server) and a code mode (any server, two-method adapter) is next on the roadmap.
+The in-app browser's storage is not Safari's or Chrome's. A `@eureka-studio/escape-handoff` package with a link mode (no server) and a code mode (any server, two-method adapter) is next on the roadmap.
 
 ## Contributing
 
