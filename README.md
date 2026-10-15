@@ -104,7 +104,17 @@ onEvent((name, data) => analytics.track(name, data));
 
 ## Carrying progress across the jump
 
-The in-app browser's storage is not Safari's or Chrome's. A `@eureka-studio/escape-handoff` package with a link mode (no server) and a code mode (any server, two-method adapter) is next on the roadmap.
+The in-app browser's storage is not Safari's or Chrome's, so a player who escapes would otherwise start from zero. Two companion packages handle it:
+
+- [`@eureka-studio/escape-handoff`](./packages/handoff) — link mode (keys in the URL hash, no server) and code mode (park on a server, claim once in the system browser).
+- [`@eureka-studio/escape-server`](./packages/server) — the matching handler for Cloudflare Workers (KV) and Vercel/Upstash, or any key-value store.
+
+```ts
+const handoff = createHandoff({ keys: 'game.', transport: fetchTransport('/api/handoff') });
+await handoff.claim(); // on load, any browser
+handoff.park(); // then, on the tap:
+escape({ params: handoff.params() });
+```
 
 ## Contributing
 
