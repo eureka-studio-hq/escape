@@ -1,0 +1,28 @@
+name: Add or fix an app
+description: An in-app browser we do not detect, or a capability that is wrong
+labels: ['data', 'good first issue']
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App and platform
+      placeholder: e.g. Threads on Android
+    validations:
+      required: true
+  - type: textarea
+    id: ua
+    attributes:
+      label: User agent string
+      description: Open https://www.whatismybrowser.com/detect/what-is-my-user-agent inside the app and paste it here.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What detect() should return
+      placeholder: '{ "inApp": true, "app": "threads", "os": "android" }'
+  - type: textarea
+    id: caps
+    attributes:
+      label: Anything wrong in capabilities()?
+      placeholder: e.g. Google sign-in actually works here
