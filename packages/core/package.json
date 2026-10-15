@@ -1,0 +1,35 @@
+{
+  "name": "@eureka/escape",
+  "version": "0.0.0",
+  "description": "Detect in-app browsers (X, Instagram, TikTok, Facebook…), fix their quirks, and give users a one-tap way out to Safari or Chrome.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/eureka-studio-hq/escape", "directory": "packages/core" },
+  "homepage": "https://github.com/eureka-studio-hq/escape#readme",
+  "bugs": "https://github.com/eureka-studio-hq/escape/issues",
+  "keywords": ["in-app browser", "webview", "instagram", "tiktok", "twitter", "facebook", "x-safari", "intent", "web game", "mobile"],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/escape.global.js",
+  "jsdelivr": "./dist/escape.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "size": "size-limit"
+  },
+  "size-limit": [
+    { "name": "core (esm, gzip)", "path": "dist/index.js", "limit": "3 kB" }
+  ],
+  "publishConfig": { "access": "public" }
+}
