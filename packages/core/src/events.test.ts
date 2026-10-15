@@ -23,3 +23,13 @@ describe('events', () => {
     bad();
   });
 });
+
+describe('inapp_detected', () => {
+  it('is replayed to listeners that subscribe after detection', async () => {
+    const { markDetected } = await import('./events');
+    markDetected({ app: 'x', os: 'ios', confidence: 'high' });
+    const late = vi.fn();
+    onEvent(late);
+    expect(late).toHaveBeenCalledWith('inapp_detected', expect.objectContaining({ app: 'x' }));
+  });
+});

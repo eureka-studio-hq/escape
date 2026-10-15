@@ -17,7 +17,23 @@ const listeners = new Set<EventListener>();
  */
 export function onEvent(listener: EventListener): () => void {
   listeners.add(listener);
+  // detect() usually runs before any listener exists; replay the one event it would have sent
+  if (detected) {
+    try {
+      listener('inapp_detected', detected);
+    } catch {
+      // ignore
+    }
+  }
   return () => listeners.delete(listener);
+}
+
+let detected: EventData | null = null;
+/** @internal called once by detect() when the page is inside an app's browser */
+export function markDetected(data: EventData): void {
+  if (detected) return;
+  detected = data;
+  emit('inapp_detected', data);
 }
 
 /**

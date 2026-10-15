@@ -1,6 +1,7 @@
 import apps from '../../../data/apps.json';
 import type { AppId, AppRow, Environment, OS } from './types';
 import { hasNavigator, userAgent } from './env';
+import { markDetected } from './events';
 
 const rows = apps.apps as AppRow[];
 
@@ -60,7 +61,10 @@ export function detect(options: { ua?: string; fresh?: boolean } = {}): Environm
   } else {
     env = { inApp: false, app: null, os, confidence: ua ? 'high' : 'low', outsideBrowser };
   }
-  if (!options.ua) cached = env;
+  if (!options.ua) {
+    cached = env;
+    if (env.inApp) markDetected({ app: env.app, os: env.os, confidence: env.confidence });
+  }
   return env;
 }
 
