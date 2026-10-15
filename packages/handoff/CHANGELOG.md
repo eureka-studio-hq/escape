@@ -1,5 +1,13 @@
 # @eureka-studio/escape-handoff
 
+## 0.1.1
+
+### Patch Changes
+
+- 1e04172: `code()` keeps one code per page even when storage is blocked, so `park()` and `params()` always agree.
+- Updated dependencies [8e82bb1]
+  - @eureka-studio/escape@0.2.1
+
 ## 0.1.0
 
 ### Minor Changes

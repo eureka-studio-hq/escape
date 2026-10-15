@@ -1,6 +1,6 @@
 {
   "name": "@eureka-studio/escape",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Detect in-app browsers (X, Instagram, TikTok, Facebook…), fix their quirks, and give users a one-tap way out to Safari or Chrome.",
   "license": "MIT",
   "repository": {

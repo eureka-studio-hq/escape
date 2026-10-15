@@ -1,5 +1,11 @@
 # @eureka-studio/escape
 
+## 0.2.1
+
+### Patch Changes
+
+- 8e82bb1: `detect()` emits `inapp_detected` once when the page is inside an app's browser, and `onEvent()` replays it to listeners that subscribe later.
+
 ## 0.2.0
 
 ### Minor Changes
