@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "In-app browser table",
+  "type": "object",
+  "required": ["apps", "unknownWebView", "browser"],
+  "$defs": {
+    "caps": {
+      "type": "object",
+      "required": ["googleSignIn", "webgl", "audioAutoplay", "fullscreen", "orientationLock", "storage", "pwaInstall"],
+      "properties": {
+        "googleSignIn": { "type": "boolean", "description": "Whether Google OAuth completes inside this browser" },
+        "webgl": { "enum": ["ok", "fragile"], "description": "fragile = context loss likely under memory pressure" },
+        "audioAutoplay": { "type": "boolean" },
+        "fullscreen": { "type": "boolean" },
+        "orientationLock": { "type": "boolean" },
+        "storage": { "enum": ["shared", "isolated"], "description": "isolated = this app's storage is not the system browser's" },
+        "pwaInstall": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "perOs": {
+      "type": "object",
+      "required": ["ios", "android"],
+      "properties": { "ios": { "$ref": "#/$defs/caps" }, "android": { "$ref": "#/$defs/caps" } },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "description": { "type": "string" },
+    "apps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "tokens", "capabilities"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "tokens": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "capabilities": { "$ref": "#/$defs/perOs" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unknownWebView": { "$ref": "#/$defs/perOs" },
+    "browser": {
+      "type": "object",
+      "required": ["ios", "android", "other"],
+      "properties": { "ios": { "$ref": "#/$defs/caps" }, "android": { "$ref": "#/$defs/caps" }, "other": { "$ref": "#/$defs/caps" } },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

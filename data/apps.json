@@ -1,0 +1,123 @@
+{
+  "$schema": "./apps.schema.json",
+  "description": "One row per in-app browser. `tokens` are case-insensitive substrings matched against navigator.userAgent, in order. Capabilities are defaults; the runtime overrides them with feature detection where the browser exposes one.",
+  "apps": [
+    {
+      "id": "x",
+      "name": "X",
+      "tokens": ["Twitter", "TwitterAndroid"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "tokens": ["Instagram"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "threads",
+      "name": "Threads",
+      "tokens": ["Barcelona"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "tokens": ["FBAN", "FBAV", "FB_IAB", "FB4A", "FBIOS"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "messenger",
+      "name": "Messenger",
+      "tokens": ["MessengerForiOS", "MessengerLite", "Orca-Android", "FB_IAB/Orca"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "snapchat",
+      "name": "Snapchat",
+      "tokens": ["Snapchat"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "tokens": ["TikTok", "musical_ly", "BytedanceWebview", "Bytedance"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "tokens": ["WhatsApp"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "tokens": ["Telegram"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "tokens": ["LinkedInApp"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "gmail",
+      "name": "Gmail / Google app",
+      "tokens": ["GSA/"],
+      "capabilities": {
+        "ios": { "googleSignIn": true, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": true, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "tokens": ["Pinterest"],
+      "capabilities": {
+        "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+        "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+      }
+    }
+  ],
+  "unknownWebView": {
+    "ios": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false },
+    "android": { "googleSignIn": false, "webgl": "fragile", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "isolated", "pwaInstall": false }
+  },
+  "browser": {
+    "ios": { "googleSignIn": true, "webgl": "ok", "audioAutoplay": false, "fullscreen": false, "orientationLock": false, "storage": "shared", "pwaInstall": true },
+    "android": { "googleSignIn": true, "webgl": "ok", "audioAutoplay": false, "fullscreen": true, "orientationLock": true, "storage": "shared", "pwaInstall": true },
+    "other": { "googleSignIn": true, "webgl": "ok", "audioAutoplay": false, "fullscreen": true, "orientationLock": true, "storage": "shared", "pwaInstall": true }
+  }
+}
