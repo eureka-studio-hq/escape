@@ -1,6 +1,6 @@
 {
   "name": "@eureka-studio/escape-handoff",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Carry a web game's saved progress across the jump from an in-app browser to Safari or Chrome. Link mode (no server) and code mode (any server).",
   "license": "MIT",
   "repository": {

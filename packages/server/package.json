@@ -1,6 +1,6 @@
 {
   "name": "@eureka-studio/escape-server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Ready-made server handlers for @eureka-studio/escape-handoff: Cloudflare Workers (KV) and Vercel / Node (Upstash Redis), plus a framework-free core you can adapt.",
   "license": "MIT",
   "repository": {
