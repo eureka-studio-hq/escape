@@ -1,0 +1,39 @@
+{
+  "name": "@eureka-studio/escape-handoff",
+  "version": "0.0.0",
+  "description": "Carry a web game's saved progress across the jump from an in-app browser to Safari or Chrome. Link mode (no server) and code mode (any server).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eureka-studio-hq/escape.git",
+    "directory": "packages/handoff"
+  },
+  "homepage": "https://github.com/eureka-studio-hq/escape#readme",
+  "bugs": "https://github.com/eureka-studio-hq/escape/issues",
+  "keywords": ["in-app browser", "webview", "localStorage", "handoff", "progress", "web game"],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/escape-handoff.global.js",
+  "jsdelivr": "./dist/escape-handoff.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "size": "size-limit"
+  },
+  "size-limit": [{ "name": "handoff (esm, gzip)", "path": "dist/index.js", "limit": "2 kB" }],
+  "peerDependencies": { "@eureka-studio/escape": "workspace:^" },
+  "devDependencies": { "@eureka-studio/escape": "workspace:*" },
+  "publishConfig": { "access": "public" }
+}
