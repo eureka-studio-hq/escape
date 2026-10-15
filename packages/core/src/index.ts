@@ -6,6 +6,6 @@ export { unlockAudio, fixViewport, lockLandscape, share } from './fixes';
 export type { ShareOptions, ShareResult } from './fixes';
 export { guardWebGL } from './webgl';
 export type { GuardWebGLOptions } from './webgl';
-export { onEvent } from './events';
+export { onEvent, emit } from './events';
 export type { EscapeEvent, EventData, EventListener } from './events';
 export type { Environment, AppId, OS, Confidence, Capabilities } from './types';

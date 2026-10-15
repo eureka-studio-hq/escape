@@ -20,7 +20,10 @@ export function onEvent(listener: EventListener): () => void {
   return () => listeners.delete(listener);
 }
 
-/** @internal */
+/**
+ * Emit an event on the shared bus. Meant for companion packages (handoff, ui); games
+ * normally only subscribe with onEvent().
+ */
 export function emit(name: EscapeEvent, data: EventData = {}): void {
   for (const l of listeners) {
     try {
