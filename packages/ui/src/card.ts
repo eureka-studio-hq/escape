@@ -34,7 +34,7 @@ export interface CardHandle {
 
 const STYLE_ID = 'escape-ui-style';
 const CSS = `
-.esc-card{--esc-bg:#111;--esc-fg:#fff;--esc-accent:#ffd23d;--esc-accent-fg:#111;--esc-radius:16px;--esc-font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+.esc-card{--esc-bg:#1c1717;--esc-fg:#f4f1ea;--esc-accent:#ec4537;--esc-accent-fg:#1c1717;--esc-radius:16px;--esc-font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   font:400 16px/1.35 var(--esc-font);color:var(--esc-fg);background:var(--esc-bg);border-radius:var(--esc-radius);padding:20px;max-width:360px;box-sizing:border-box;text-align:center}
 .esc-overlay{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.6)}
 .esc-card h2{margin:0 0 6px;font-size:22px;line-height:1.2;font-weight:700}

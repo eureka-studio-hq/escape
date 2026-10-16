@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/eureka-studio-hq/escape/main/.github/assets/banner.svg" alt="escape — leave the in-app browser, keep your progress" width="100%">
+  <img src="https://raw.githubusercontent.com/eureka-studio-hq/escape/main/.github/assets/banner.png" alt="escape — leave the in-app browser, keep your progress" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@eureka-studio/escape"><img alt="npm version" src="https://img.shields.io/npm/v/@eureka-studio/escape?label=npm&color=ffd23d&labelColor=15120f"></a>
-  <a href="https://bundlejs.com/?q=@eureka-studio/escape"><img alt="bundle size" src="https://img.shields.io/bundlejs/size/@eureka-studio/escape?label=gzip&color=ffd23d&labelColor=15120f"></a>
+  <a href="https://www.npmjs.com/package/@eureka-studio/escape"><img alt="npm version" src="https://img.shields.io/npm/v/@eureka-studio/escape?label=npm&color=EC4537&labelColor=1C1717"></a>
+  <a href="https://bundlejs.com/?q=@eureka-studio/escape"><img alt="bundle size" src="https://img.shields.io/bundlejs/size/@eureka-studio/escape?label=gzip&color=EC4537&labelColor=1C1717"></a>
   <a href="https://github.com/eureka-studio-hq/escape/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/eureka-studio-hq/escape/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://www.npmjs.com/package/@eureka-studio/escape"><img alt="downloads" src="https://img.shields.io/npm/dm/@eureka-studio/escape?color=ffd23d&labelColor=15120f"></a>
-  <a href="./LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-ffd23d?labelColor=15120f"></a>
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-strict-ffd23d?labelColor=15120f">
-  <img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-ffd23d?labelColor=15120f">
+  <a href="https://www.npmjs.com/package/@eureka-studio/escape"><img alt="downloads" src="https://img.shields.io/npm/dm/@eureka-studio/escape?color=EC4537&labelColor=1C1717"></a>
+  <a href="./LICENSE"><img alt="MIT" src="https://img.shields.io/badge/license-MIT-EC4537?labelColor=1C1717"></a>
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-strict-EC4537?labelColor=1C1717">
+  <img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-EC4537?labelColor=1C1717">
 </p>
 
 # @eureka-studio/escape
