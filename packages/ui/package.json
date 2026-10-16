@@ -1,0 +1,60 @@
+{
+  "name": "@eureka-studio/escape-ui",
+  "version": "0.0.0",
+  "description": "A small, themeable \"Open in Safari / Chrome\" card for @eureka-studio/escape. Plain DOM, CSS variables, no framework.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eureka-studio-hq/escape.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/eureka-studio-hq/escape#readme",
+  "bugs": "https://github.com/eureka-studio-hq/escape/issues",
+  "keywords": [
+    "in-app browser",
+    "webview",
+    "escape",
+    "ui",
+    "card"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/escape-ui.global.js",
+  "jsdelivr": "./dist/escape-ui.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "size": "size-limit"
+  },
+  "size-limit": [
+    {
+      "name": "ui (esm, gzip)",
+      "path": "dist/index.js",
+      "limit": "2 kB"
+    }
+  ],
+  "peerDependencies": {
+    "@eureka-studio/escape": "workspace:^"
+  },
+  "devDependencies": {
+    "@eureka-studio/escape": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
