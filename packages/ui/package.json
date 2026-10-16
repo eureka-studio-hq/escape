@@ -1,6 +1,6 @@
 {
   "name": "@eureka-studio/escape-ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A small, themeable \"Open in Safari / Chrome\" card for @eureka-studio/escape. Plain DOM, CSS variables, no framework.",
   "license": "MIT",
   "repository": {
