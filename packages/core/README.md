@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/eureka-studio-hq/escape/main/.github/assets/banner.png" alt="escape — leave the in-app browser, keep your progress" width="100%">
+  <img src=".github/assets/banner.png" alt="escape — leave the in-app browser, keep your progress" width="100%">
 </p>
 
 <p align="center">
