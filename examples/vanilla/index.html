@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>escape — no build step</title>
+    <style>
+      body {
+        font:
+          16px/1.4 system-ui,
+          sans-serif;
+        margin: 0;
+        padding: 24px;
+        background: #f6f4ef;
+        color: #111;
+      }
+      pre {
+        background: #fff;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+      }
+      .esc-card {
+        --esc-bg: #14110f;
+        --esc-fg: #fff6e0;
+        --esc-accent: #ffd23d;
+        --esc-accent-fg: #14110f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>escape</h1>
+    <p>
+      Open this page from X, Instagram or TikTok on a phone to see the card. In a normal browser
+      nothing extra appears.
+    </p>
+    <pre id="out">detecting…</pre>
+
+    <!-- One script tag each; no bundler. -->
+    <script src="https://unpkg.com/@eureka-studio/escape@0.2/dist/escape.global.js"></script>
+    <script src="https://unpkg.com/@eureka-studio/escape-ui@0.1/dist/escape-ui.global.js"></script>
+    <script>
+      const env = Escape.detect();
+      const caps = Escape.capabilities();
+      document.getElementById('out').textContent = JSON.stringify({ env, caps }, null, 2);
+      Escape.onEvent((name, data) => console.log('[escape]', name, data));
+      EscapeUI.showEscapeCard({ escape: { medium: 'example' } });
+    </script>
+  </body>
+</html>

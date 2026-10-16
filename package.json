@@ -14,7 +14,8 @@
     "typecheck": "pnpm build && pnpm -r --filter './packages/*' typecheck",
     "size": "pnpm -r --filter './packages/*' build && pnpm -r --filter './packages/*' --if-present size",
     "changeset": "changeset",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish",
+    "build:examples": "pnpm -r --filter './examples/*' build"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",

@@ -1,0 +1,17 @@
+{
+  "name": "example-vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@eureka-studio/escape": "workspace:*",
+    "@eureka-studio/escape-handoff": "workspace:*",
+    "@eureka-studio/escape-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

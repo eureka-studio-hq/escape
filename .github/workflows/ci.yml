@@ -20,4 +20,5 @@ jobs:
       - run: pnpm build
       - run: pnpm -r --filter './packages/*' typecheck
       - run: pnpm test
+      - run: pnpm build:examples
       - run: pnpm -r --filter './packages/*' --if-present size
