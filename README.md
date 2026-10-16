@@ -13,7 +13,9 @@ if (detect().inApp) {
 guardWebGL(canvas, { onLost: () => pauseGame() });
 ```
 
-Works with plain HTML, Vite, React, Vue, Svelte, Phaser, PixiJS, Three.js and any other browser code.
+Works with plain HTML, Vite, React, Vue, Svelte, Phaser, PixiJS, Three.js and any other browser code. See [`examples/`](./examples) for a no-build page, a Vite app and a React hook.
+
+Running in production on [Danfo Run](https://danforun.com), where about a third of players arrive from X, Instagram or WhatsApp.
 
 ## Install
 
@@ -114,6 +116,15 @@ const handoff = createHandoff({ keys: 'game.', transport: fetchTransport('/api/h
 await handoff.claim(); // on load, any browser
 handoff.park(); // then, on the tap:
 escape({ params: handoff.params() });
+```
+
+## Showing a card
+
+[`@eureka-studio/escape-ui`](./packages/ui) is an optional 1.5 kB themeable "Open in Safari / Chrome" card, plus a "The game paused" card for a lost WebGL context.
+
+```ts
+import { showEscapeCard } from '@eureka-studio/escape-ui';
+showEscapeCard({ copy: { title: 'Keep your progress' }, escape: { medium: 'start' } });
 ```
 
 ## Contributing
