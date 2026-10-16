@@ -166,13 +166,11 @@ export function showLostCard(options: LostCardOptions = {}): CardHandle | null {
   const handle = showEscapeCard({
     ...options,
     copy: {
+      ...c,
       title: c.title ?? 'The game paused',
       text:
         c.text ?? fill('This app’s browser ran out of memory. {browser} runs it smoothly.', vars),
-      open: c.open,
       dismiss: c.retry ?? 'Carry on',
-      copied: c.copied,
-      stuck: c.stuck,
     },
     onClose: (reason) => {
       if (reason === 'dismiss') retry();
